@@ -1,18 +1,6 @@
 {
   "Books": [
     {
-      "id": "2",
-      "title": "1984",
-      "author": "George Orwell",
-      "year": 1949,
-      "genre": [
-        "Dystopian",
-        "Science Fiction"
-      ],
-      "description": "A dystopian novel portraying a totalitarian society.",
-      "cover_image": "https://fakeimg.pl/667x1000/cc6600"
-    },
-    {
       "id": "3",
       "title": "Pride and Prejudice",
       "author": "Jane Austen",
@@ -562,18 +550,6 @@
         "Post-Apocalyptic"
       ],
       "description": "A post-apocalyptic horror novel about a deadly pandemic and its aftermath.",
-      "cover_image": "https://fakeimg.pl/667x1000/cc6600"
-    },
-    {
-      "id": "49",
-      "title": "The Color Purple",
-      "author": "Alice Walker",
-      "year": 1982,
-      "genre": [
-        "Fiction",
-        "Historical"
-      ],
-      "description": "A novel about the life of African-American women in the Southern United States.",
       "cover_image": "https://fakeimg.pl/667x1000/cc6600"
     },
     {

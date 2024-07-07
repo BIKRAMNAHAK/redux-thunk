@@ -25,7 +25,7 @@ export const DeleteBook = (deletedId) => {
 export const AddBookAsync = (data) => {
     return (dispatch) => {
          data.id = generateUniqueId({
-            length: 2,
+            length: 3,
             useLetters: false
         });
         axios.post('http://localhost:3200/Books', data)
