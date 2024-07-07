@@ -1,0 +1,10 @@
+.librery{
+    background-image: url('./assets/images/librery.jpg');
+    height: 650px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    object-fit: contain;
+    padding: 50px;
+    display: flex;
+    align-items: center;
+}
