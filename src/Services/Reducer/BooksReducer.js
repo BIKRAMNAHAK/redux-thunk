@@ -14,13 +14,15 @@ function BooksReducer(state = initialState, action) {
             };
                 
         case "EDITBOOKS":
-            const updatedBooks = state.books.map(book =>
-                book.id === action.payload.id ? action.payload : book
-            );
+            let singlebook = [...state.books]
+
+            const updatedBooks = singlebook.filter((b) =>{
+                return b.id === action.payload
+            });
             return {
                 ...state,
-                books: updatedBooks,
-                book: action.payload,
+                // books: updatedBooks,
+                book: updatedBooks[0],
             };
                 
         default:
