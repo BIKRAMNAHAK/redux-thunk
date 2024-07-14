@@ -10,12 +10,12 @@ function ViewData() {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     // const { books } = useSelector(state => state.BookReducer)
-    const { books } = useSelector(state => state.BooksReducer)
+    const { books ,isEdit} = useSelector(state => state.BooksReducer)
 
     const handleEdit = (id) => {
 
         dispatch(EditDataAsync(id))
-        navigate(`/Edit/:${id}`)
+       
     }
     const handleDelet = (id) => {
         dispatch(DeleteAsync(id))
@@ -24,6 +24,12 @@ function ViewData() {
     useEffect(() => {
         dispatch(GetDataAsync());
     }, [])
+
+    useEffect(()=>{
+        if(isEdit){
+            navigate('/edit')
+        }
+    },[isEdit])
     return (
         <>
             <Container fluid>

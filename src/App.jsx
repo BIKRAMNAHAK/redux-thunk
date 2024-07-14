@@ -19,7 +19,7 @@ function App() {
       <Routes >
         <Route path="/" element={<AddBooks />} />
         <Route path="/viewData" element={<ViewData />} />
-        <Route path='/Edit/:id' element={<EditBooks /> } />
+        <Route path='/Edit' element={<EditBooks /> } />
       </Routes>
     </>
   )

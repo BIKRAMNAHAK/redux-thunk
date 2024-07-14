@@ -15,6 +15,12 @@ export const EditBooks = (editdata) => {
     };
 }
 
+const updateData = () =>{
+    return {
+        type: 'UPDATEBOOKS',
+    }
+}
+
 export const DeleteBook = (deletedId) => {
     return {
         type: 'DELETEBOOK',
@@ -51,14 +57,31 @@ export const GetDataAsync = () => {
     };
 };
 
-export const EditDataAsync = (editId, editData) => {
+export const EditDataAsync = (editId) => {
     return (dispatch) => {
-        axios.patch(`http://localhost:3200/Books/${editId}`, editData)
+        axios.get(`http://localhost:3200/Books/${editId}`)
             .then((res) => {
+                console.log("Edit data success:", res.data);
                 dispatch(EditBooks(res.data));
+
             })
             .catch((err) => {
-                console.log("error", err);
+                console.error("Error editing data:", err);
+            });
+    };
+};
+
+export const updateDataAsync = (updatedata) => {
+    return (dispatch) => {
+        axios.patch(`http://localhost:3200/Books/${updatedata.id}`, updatedata)
+            .then((res) => {
+                console.log("Update data success:", res);
+                dispatch(GetDataAsync());
+                dispatch(updateData())
+            })
+            .catch((err) => {
+                console.error("Error updating data:", err);
+                // dispatch(updateErr(err));
             });
     };
 };

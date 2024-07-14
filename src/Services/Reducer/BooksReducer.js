@@ -3,6 +3,7 @@ import { GetDataAsync } from "../Actions/BooksActions";
 const initialState = {
     books: [],
     book: null,
+    isEdit : false
 };
 
 function BooksReducer(state = initialState, action) {
@@ -13,17 +14,21 @@ function BooksReducer(state = initialState, action) {
                 books: action.payload
             };
                 
-        case "EDITBOOKS":
-            let singlebook = [...state.books]
-
-            const updatedBooks = singlebook.filter((b) =>{
-                return b.id === action.payload
-            });
-            return {
-                ...state,
-                // books: updatedBooks,
-                book: updatedBooks[0],
-            };
+            case "EDITBOOKS":
+                return {
+                    ...state,
+                    book: action.payload,
+                    isEdit: true
+                };
+    
+            case "UPDATEBOOKS":
+               
+                return {
+                    ...state,
+                    book: null,
+                    isEdit: false,
+                };
+    
                 
         default:
             return state;
