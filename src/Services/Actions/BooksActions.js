@@ -66,7 +66,7 @@ export const EditDataAsync = (editId) => {
 
             })
             .catch((err) => {
-                console.error("Error editing data:", err);
+                console.log("Error editing data:", err);
             });
     };
 };
@@ -80,7 +80,7 @@ export const updateDataAsync = (updatedata) => {
                 dispatch(updateData())
             })
             .catch((err) => {
-                console.error("Error updating data:", err);
+                console.log("Error updating data:", err);
                 // dispatch(updateErr(err));
             });
     };

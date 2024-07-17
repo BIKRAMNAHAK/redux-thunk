@@ -24,77 +24,75 @@ function EditBooks() {
 
     const handleUpdate = (e) => {
         e.preventDefault();
-        console.log("update data",e);
+        console.log("update data", e);
         dispatch(updateDataAsync(editBook));
         navigate('/viewData');
         // setIsUpdate(true);
     };
 
-    // useEffect(() => {
-    //     if (isUpdate) {
-    //         navigate('/viewData');
-    //     }
-    // }, [isUpdate, navigate]);
+ 
 
     if (!book) return null; // or a loading spinner
 
     return (
-        <Container fluid className='d-flex justify-content-center mt-5'>
-            <form className="form" onSubmit={handleUpdate}>
-                <p className="title">Edit Books Details</p>
-                <p className="message">Update the book details:</p>
+        <div className="edit-body">
+            <Container fluid className='d-flex justify-content-center'>
+                <form className="form" onSubmit={handleUpdate}>
+                    <p className="title">Edit Books Details</p>
+                    <p className="message">Update the book details:</p>
 
-                <label>
-                    <input
-                        className="input"
-                        type="text"
-                        placeholder="Enter book title"
-                        name="title"
-                        value={editBook.title || ''}
-                        onChange={handleChange}
-                    />
-                    <span>Book Title</span>
-                </label>
+                    <label>
+                        <input
+                            className="input"
+                            type="text"
+                            placeholder="Enter book title"
+                            name="title"
+                            value={editBook.title || ''}
+                            onChange={handleChange}
+                        />
+                        <span>Book Title</span>
+                    </label>
 
-                <label>
-                    <input
-                        className="input"
-                        type="text"
-                        placeholder="Name of Authors"
-                        name="author"
-                        value={editBook.author || ''}
-                        onChange={handleChange}
-                    />
-                    <span>Author</span>
-                </label>
+                    <label>
+                        <input
+                            className="input"
+                            type="text"
+                            placeholder="Name of Authors"
+                            name="author"
+                            value={editBook.author || ''}
+                            onChange={handleChange}
+                        />
+                        <span>Author</span>
+                    </label>
 
-                <label>
-                    <input
-                        className="input"
-                        type="text"
-                        placeholder="Enter genre"
-                        name="genre"
-                        value={editBook.genre || ''}
-                        onChange={handleChange}
-                    />
-                    <span>Genre</span>
-                </label>
+                    <label>
+                        <input
+                            className="input"
+                            type="text"
+                            placeholder="Enter genre"
+                            name="genre"
+                            value={editBook.genre || ''}
+                            onChange={handleChange}
+                        />
+                        <span>Genre</span>
+                    </label>
 
-                <label>
-                    <input
-                        className="input"
-                        type="tel"
-                        placeholder="Enter publication Year"
-                        name="year"
-                        value={editBook.year || ''}
-                        onChange={handleChange}
-                    />
-                    <span>Publication Year</span>
-                </label>
+                    <label>
+                        <input
+                            className="input"
+                            type="tel"
+                            placeholder="Enter publication Year"
+                            name="year"
+                            value={editBook.year || ''}
+                            onChange={handleChange}
+                        />
+                        <span>Publication Year</span>
+                    </label>
 
-                <button type="submit" className="submit">Update</button>
-            </form>
-        </Container>
+                    <button type="submit" className="submit">Update</button>
+                </form>
+            </Container>
+        </div>
     );
 }
 

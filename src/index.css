@@ -8,3 +8,14 @@
     display: flex;
     align-items: center;
 }
+
+.edit-body{
+    background-image: url('./assets/images/edit.webp');
+    height: 655px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: 0%;
+    background-repeat: no-repeat;
+}
